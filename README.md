@@ -1,0 +1,1 @@
+Simple python script using pythonping module to ping destination and save a log of all attempts in simple txt file
