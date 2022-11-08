@@ -97,7 +97,7 @@ def ping_itself(ip):
 
 			time.sleep(1)
 	except KeyboardInterrupt:
-		sum_countmary(str(pc_ID)+'_ping_'+ip+'_'+str(today)+'.txt')
+		summary(str(pc_ID)+'_ping_'+ip+'_'+str(today)+'.txt')
 
 def main():
 	try:
