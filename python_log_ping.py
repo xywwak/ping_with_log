@@ -70,16 +70,14 @@ def ping_itself(ip):
 		today = dt.today()
 		today = today.strftime('%d.%m.%Y')
 		pc_ID = os.environ['COMPUTERNAME']
+		exists_log = os.path.exists(str(pc_ID)+'_ping_'+ip+'_'+str(today)+'.txt')
 
-		existuje = os.path.exists(str(pc_ID)+'_ping_'+ip+'_'+str(today)+'.txt')
-		# print(existuje)
-		
 		i = 0
 
-		while existuje == True:
+		while exists_log == True:
 			i += 1
-			existuje = os.path.exists(str(i)+'_'+str(pc_ID)+'_ping_'+ip+'_'+str(today)+'.txt')
-			if existuje == False:
+			exists_log = os.path.exists(str(i)+'_'+str(pc_ID)+'_ping_'+ip+'_'+str(today)+'.txt')
+			if exists_log == False:
 				os.rename(str(pc_ID)+'_ping_'+ip+'_'+str(today)+'.txt', str(i)+'_'+str(pc_ID)+'_ping_'+ip+'_'+str(today)+'.txt')
 
 
